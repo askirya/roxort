@@ -15,7 +15,8 @@ def get_main_keyboard(user_id: int = None):
         [KeyboardButton(text="⭐️ Отзывы")]
     ]
     
-    if user_id in ADMIN_IDS:
+    # Проверяем, является ли пользователь администратором
+    if isinstance(user_id, int) and user_id in ADMIN_IDS:
         base_buttons.append([KeyboardButton(text="🔑 Панель администратора")])
     
     return ReplyKeyboardMarkup(keyboard=base_buttons, resize_keyboard=True)

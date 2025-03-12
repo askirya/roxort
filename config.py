@@ -6,11 +6,18 @@ load_dotenv()
 # Токен бота
 BOT_TOKEN = "8129643535:AAEN6aiJ6R-dE-BXA76CgewnpEVbSys597o"
 
-# ID администраторов
+# ID администраторов (используем числовой ID)
 ADMIN_IDS = [1396514552]  # @ASKIRYK
 
 # Настройки базы данных
 DATABASE_URL = os.getenv('DATABASE_URL', "sqlite+aiosqlite:///database.db")
+
+# Доступные сервисы
+AVAILABLE_SERVICES = {
+    "telegram": "Telegram",
+    "yandex": "Яндекс",
+    "google": "Google"
+}
 
 # Настройки времени аренды (в часах)
 RENTAL_PERIODS = [1, 4, 12, 24]
